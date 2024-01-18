@@ -1,0 +1,555 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+{% endblock extra_css %}
+{% block content %}
+    <!-- Header -->
+    <div class="header-wrapper">
+        <h1 class="sr-only">ZORG GAMES</h1>
+        <header class="header">
+            <div class="logo">
+                <a href="/">
+                    <img class="logo__image" src={{ headerImage }} alt="Logo" width="104" height="24" />
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/pages/studia.html">Студия</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/pages/portfolio.html">Портфолио</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/pages/advance.html">Работа</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/pages/facility.html">Услуги</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="change-language" data-js="change-language">
+                <select id="languages">
+                    <option value="EN">EN</option>
+                    <option value="EN2">EN2</option>
+                    <option value="EN3">EN3</option>
+                    <option value="EN4">EN4</option>
+                    <option value="EN5">EN5</option>
+                </select>
+            </div>
+            <!-- Theme checker -->
+            <div class="theme-checker-container" data-js="theme-checker-container">
+                <input type="checkbox" id="toggle-change-color-theme" />
+                <label class="theme-checker" for="toggle-change-color-theme">
+                    <div id="star"></div>
+                    <div id="moon"></div>
+                </label>
+            </div>
+            <div class="burger" data-js="burger"></div>
+        </header>
+    </div>
+    <div class="flowContainer">
+      
+        <main>
+            
+            <section class="gallery">
+                <div class="container">
+                    <div class="gallery__swiper">
+                        <div class="swiper-container swiper-no-mousewheel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
+                                    <div class="swiper-zoom-container">
+                                        <video id="wp-custom-header-video"
+                                               autoplay
+                                               loop
+                                               playsinline
+                                               width="0"
+                                               height="0"
+                                               src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
+                                    <div class="swiper-zoom-container">
+                                        <img alt=""
+                                             class="swiper-lazy swiper-lazy-loaded undefined"
+                                             src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
+                                    <div class="swiper-zoom-container">
+                                        <img alt=""
+                                             class="swiper-lazy swiper-lazy-loaded undefined"
+                                             src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
+                                    <div class="swiper-zoom-container">
+                                        <video id="wp-custom-header-video"
+                                               autoplay
+                                               loop
+                                               playsinline
+                                               width="0"
+                                               height="0"
+                                               src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
+                                    <div class="swiper-zoom-container">
+                                        <img alt=""
+                                             class="swiper-lazy swiper-lazy-loaded undefined"
+                                             src="{% static 'assets/team-d8b232ac.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
+                                    <div class="swiper-zoom-container">
+                                        <img alt=""
+                                             class="swiper-lazy swiper-lazy-loaded undefined"
+                                             src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="intro">
+                <div class="container">
+                    <p class="intro__title">
+                        МЫ <span class="accent-text">ДЕЛАЕМ</span> ИГРЫ
+                    </p>
+                    <p class="intro__subtitle">
+                        Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra
+                        interdum. Nascetur interdum arcu consectetur donec morbi enim quis
+                        vitae ut.
+                    </p>
+                    <h2 class="intro__about-us">О нас</h2>
+                    <div class="intro__zorg-games">
+                        <div>
+                            <div class="intro__zorg-games-title">
+                                <span class="accent-text">ZORG</span>
+                                <br />
+                                GAMES
+                            </div>
+                            <div class="intro__zorg-games-subtitle">
+                                Lorem ipsum dolor sit amet consectetur. Massa id lobortis
+                                viverra interdum. Nascetur interdum arcu consectetur donec
+                                morbi enim quis vitae ut. Vitae aliquet elit nulla venenatis
+                                odio eu consequat malesuada. Enim risus at massa molestie at.
+                                Amet amet enim ut sit tristique placerat arcu.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="team-img">{% image page.image_about_us max-768x609 loading="lazy" %}</div>
+                        </div>
+                    </div>
+                    <div class="arrow">
+                        <div class="arrow-info">Узнать больше</div>
+                        <a href="./pages/studia.html" class="arrow-btn block btn">студия</a>
+                    </div>
+                </div>
+            </section>
+            <section class="projects">
+                <div class="container">
+                    <h2 class="projects__title">Наши проекты</h2>
+                    <div class="projects__wrapper">
+                        <div class="projects__browl">
+                            <img class="projects__browl-image block"
+                                 src="{% static 'assets/browl-royale.png' %}"
+                                 alt="Browl Royale Logo"
+                                 loading="lazy" />
+                            <p class="projects__browl-title">
+                                Lorem ipsum dolor sit amet consectetur. Massa id lobortis
+                                viverra interdum.
+                                <br />
+                                Vitae aliquet elit nulla venenatis
+                                odio eu consequat malesuada. Enim risus at massa molestie at.
+                                <br />
+                                Amet amet enim ut sit tristique placerat arcu.
+                            </p>
+                            <div class="projects__stores">
+                                <a href="#" target="_blank">
+                                    <img height="58"
+                                         width="197"
+                                         class="block projects__stores-image"
+                                         loading="lazy"
+                                         srcset="{% static 'assets/app-store.png 1x,
+                                                 static/assets/app-store2x.png 2x' %}"
+                                         alt="App Store Logo"
+                                         loading="lazy" />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img height="58"
+                                         width="197"
+                                         class="block projects__stores-image"
+                                         loading="lazy"
+                                         srcset="{% static 'assets/google-play.png 1x,
+                                                 static/assets/google-play2x.png 2x' %}"
+                                         alt="Google Play Logo"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="projects__list">
+                            <div class="projects__item">
+                                <a href="#" target="_blank">
+                                    <img src="./public/img/browl-item.png"
+                                         alt="Browl Logo"
+                                         loading="lazy"
+                                         width="97"
+                                         height="97"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                            <div class="projects__item">
+                                <a href="#" target="_blank">
+                                    <img src="./public/img/game-item.png"
+                                         alt="Browl Logo"
+                                         loading="lazy"
+                                         width="97"
+                                         height="97"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                            <div class="projects__item">
+                                <a href="#" target="_blank">
+                                    <img src="./public/img/team.png"
+                                         alt="Browl Logo"
+                                         loading="lazy"
+                                         width="97"
+                                         height="97"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                            <div class="projects__item">
+                                <a href="#" target="_blank">
+                                    <img src="./public/img/team.png"
+                                         alt="Browl Logo"
+                                         loading="lazy"
+                                         width="97"
+                                         height="97"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                            <div class="projects__item">
+                                <a href="#" target="_blank">
+                                    <img src="./public/img/team.png"
+                                         alt="Browl Logo"
+                                         loading="lazy"
+                                         width="97"
+                                         height="97"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                            <div class="projects__item">
+                                <a href="#" target="_blank">
+                                    <img src="./public/img/team.png"
+                                         alt="Browl Logo"
+                                         loading="lazy"
+                                         width="97"
+                                         height="97"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                            <div class="projects__item">
+                                <a href="#" target="_blank">
+                                    <img src="./public/img/team.png"
+                                         alt="Browl Logo"
+                                         loading="lazy"
+                                         width="97"
+                                         height="97"
+                                         loading="lazy" />
+                                </a>
+                            </div>
+                            <div class="projects__item--more">
+                                <a href="./pages/portfolio.html">
+                                    <img src="./public/img/+.svg" alt="+" loading="lazy" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="services">
+                <div class="container">
+                    <h2 class="services__title">Услуги</h2>
+                    <div class="services__profile">
+                        <div class="services__profile-logo card--left card--w405">
+                            <img src="./public/img/team.png" alt="team" loading="lazy" />
+                        </div>
+                        <div class="services__profile-info">
+                            <h2 class="services__profile-title">
+                                Наш профиль
+                                <br />
+                                <span class="accent-text">Создание мобильных игр</span>
+                            </h2>
+                            <p class="services__profile-subtitle">Это то, что мы любим, чем болеем и что готовы сделать для вас.</p>
+                            <div class="arrow">
+                                <div class="arrow-info">Детальнее&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                <a href="./pages/facility.html" class="arrow-btn block btn">УСЛУГИ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services__partners">
+                        <div class="services__partners-item">
+                            <a href="https://wannaplay.gg/" target="_blank">
+                                <img class="block"
+                                     src="{% static 'assets/partners/WannaPlay.png' %}"
+                                     alt="WannaPlay"
+                                     loading="lazy" />
+                            </a>
+                        </div>
+                        <div class="services__partners-item">
+                            <a href="https://hitappsgames.com/" target="_blank">
+                                <img class="block"
+                                     src="{% static 'assets/partners/HITAPPS-LOGO.png' %}"
+                                     alt="HITAPPS-LOGO"
+                                     loading="lazy" />
+                            </a>
+                        </div>
+                        <div class="services__partners-item">
+                            <a href="https://madpixel.dev/ru/madpixel_duplicate/" target="_blank">
+                                <img class="block"
+                                     src="{% static 'assets/partners/Mad-Pixel-Games-LTD-Logo.png' %}"
+                                     alt="Mad-Pixel-Games"
+                                     loading="lazy"
+                                     height="100" />
+                            </a>
+                        </div>
+                        <div class="services__partners-item">
+                            <a href="https://say.games/" target="_blank">
+                                <img class="block"
+                                     src="{% static 'assets/partners/SayGames-Logo.png' %}"
+                                     alt="SayGames"
+                                     loading="lazy" />
+                            </a>
+                        </div>
+                        <div class="services__partners-item">
+                            <a href="https://azurgames.com/ru/main/" target="_blank">
+                                <img class="block"
+                                     src="{% static 'assets/partners/Azur-Games.png' %}"
+                                     alt="Azur-Games"
+                                     loading="lazy" />
+                            </a>
+                        </div>
+                        <div class="services__partners-item">
+                            <a href="https://vaveda.games/" target="_blank">
+                                <img src="{% static 'assets/partners/vaveda.png' %}"
+                                     alt="Vaveda"
+                                     loading="lazy" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="carrier">
+                <div class="container">
+                    <h2 class="carrier__title">Карьера</h2>
+                    <p class="carrier__subtitle">
+                        Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra
+                        interdum. Nascetur interdum arcu consectetur donec morbi enim quis
+                        vitae ut.
+                    </p>
+                    <div class="carrier__vacancy carrier__vacancy--mb174">
+                        {% for block in page.body %}
+                            {% include_block block %}
+                        {% endfor %}
+                        <a href="/pages/advance.html">
+                            <div class="carrier__vacancy-card carrier__vacancy-card--more"
+                                 data-js="vacancy-item">
+                                <div class="carrier__vacancy-card--more-title">Полный список вакансий</div>
+                                <div class="carrier__vacancy--more-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         width="66"
+                                         height="66"
+                                         viewBox="0 0 66 66"
+                                         fill="#99CC00">
+                                        <circle cx="33" cy="33" r="33" fill="#99CC00" />
+                                        <path d="M14.4878 32.9996H47.8795M38.2705 44.6316L49.1872 33.7149C49.5822 33.3199 49.5822 32.6794 49.1872 32.2844L38.2705 21.3677" stroke="currentColor" stroke-width="6.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carrier__application">
+                        <form action="#" class="carrier__application-form">
+                            <input type="text"
+                                   class="carrier__application-input block"
+                                   placeholder="Имя"
+                                   name="name"
+                                   required />
+                            <input type="email"
+                                   class="carrier__application-input block"
+                                   placeholder="Почта"
+                                   name="email"
+                                   required />
+                            <input type="text"
+                                   class="carrier__application-input block"
+                                   placeholder="Тема"
+                                   name="theme"
+                                   required />
+                            <textarea class="carrier__application-input carrier__application-text-area block"
+                                      name="message"
+                                      id="message-carrier"
+                                      placeholder="Ваше сообщение"
+                                      required></textarea>
+                            <input type="checkbox"
+                                   class="custom-checkbox__field"
+                                   id="personal-data-checkbox"
+                                   name="personal-data"
+                                   required />
+                            <label for="personal-data-checkbox"
+                                   class="custom-checkbox__label carrier__application-checkbox">
+                                Даю согласие на&nbsp;
+                                <a href="#" target="_blank" class="carrier__application-personal">обработку личных данных</a>
+                            </label>
+                            <input type="submit" class="carrier__application-submit block" />
+                        </form>
+                        <div class="card--right card--w405 card--mh552">
+                            <img src="./public/img/team.png" alt="carrier-image" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Contact Form -->
+    <div class="contact-modal" data-js="contact-modal">
+        <div class="contact-modal__cross" data-js="contact-modal-cross"></div>
+        <div class="contact-modal__top-title">
+            <h2 class="contact-modal__title" data-js="contact-modal-title">
+                UI/UX
+                Technical Designer
+            </h2>
+            <time class="contact-modal__date"
+                  datetime="2023-05-29"
+                  data-js="contact-modal-date">Май 29, 2023</time>
+        </div>
+        <div class="contact-modal__subtitle" data-js="contact-modal-work-type">Удаленно</div>
+        <p class="contact-modal__info" data-js="contact-modal-message">
+            We are looking for a talented and skillful UI/UX Technical Designer to work
+            on our game projects for the world’s best publishers and game developers.
+            Pingle Game Studio is a team of professional game developers with over 15
+            years of industry experience. Our goal is to reach and maintain a leading
+            position among video game developers all over the world. We are engaged in
+            the development and porting, work with all stages of development.
+        </p>
+        <div class="contact-modal__requirements-title"
+             data-js="contact-modal-req-title">Основные требования:</div>
+        <ul class="contact-modal__requirements-list"
+            data-js="contact-modal-req-list">
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">Creating and implementing interfaces from premade design layouts;</li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">
+                Compiling and working with interfaces inside game engine (Unreal
+                Engine/Unity);
+            </li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">Supporting and correcting the existing interfaces;</li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">Creating the structure and work logic for existing interfaces;</li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">
+                Adapting interfaces for different platforms: PC, Consoles, Mobile;
+            </li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">Offering improvements to the existing interfaces;</li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">Optimizing and importing UI assets;</li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">Close collaboration with UI/UX designers and game designers;</li>
+            <li class="contact-modal__requirements-item"
+                data-js="contact-modal-req-item">Drawing simple elements of interfaces.</li>
+        </ul>
+        <div class="contact-modal__contact-us-title">Понравилась вакансия? Свяжись с нами!</div>
+        <form action=""
+              class="contact-modal__form"
+              data-js="contact-form"
+              id="contact-form"
+              enctype="multipart/form-data"
+              data-js-details='{"url": "http://192.168.0.5:5000/form1"}'>
+            <div class="contact-modal__input-container">
+                <input type="text"
+                       class="input-text contact-modal__input"
+                       placeholder="*Name"
+                       required />
+                <input type="email"
+                       class="input-text contact-modal__input"
+                       placeholder="*Email"
+                       required />
+                <div class="contact-modal__input input-icon-container input-icon-container--telegram">
+                    <input type="text"
+                           class="input-text input-text--telegram"
+                           placeholder="@example" />
+                </div>
+                <div class="contact-modal__input input-icon-container input-icon-container--linkedin">
+                    <input type="text"
+                           class="input-text input-text--linkedin contact-modal__input"
+                           placeholder="linkedin" />
+                </div>
+            </div>
+            <textarea name="about-me"
+                      id="about-me"
+                      placeholder="*write about yourself..."
+                      class="contact-modal__textarea text-area"
+                      required></textarea>
+            <div class="contact-modal__bottom">
+                <div class="contact-modal__file">
+                    <label for="input-file" class="contact-modal__file-label"></label>
+                    <input type="file"
+                           class="input-file"
+                           id="input-file"
+                           title="Прикрепить резюме" />
+                    <button class="contact-modal__resume" id="fileButton" data-js="get-file-btn">Прикрепить резюме</button>
+                    <div class="contact-modal__delete-file" data-js="delete-file"></div>
+                </div>
+                <input type="submit" value="Отправить" class="contact-modal__input-submit" />
+            </div>
+            <input type="reset"
+                   value="Очистить форму"
+                   data-js="contact-modal-reset"
+                   style="display: none" />
+        </form>
+    </div>
+    <!-- Laptpo menu -->
+    <div class="laptop-menu" data-js="laptop-menu">
+        <nav class="laptop-menu__nav">
+            <ul class="laptop-menu__list">
+                <li class="laptop-menu__item">
+                    <a href="/pages/studia.html">Студия</a>
+                </li>
+                <li class="laptop-menu__item">
+                    <a href="/pages/portfolio.html">Портфолио</a>
+                </li>
+                <li class="laptop-menu__item">
+                    <a href="/pages/advance.html">Работа</a>
+                </li>
+                <li class="laptop-menu__item">
+                    <a href="/pages/facility.html">Услуги</a>
+                </li>
+                <li class="laptop-menu__item">
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="social">
+            <a class="block" href="tel:79028607651">+7 (902) 860-76-51</a>
+            <a class="block" href="mailto:m.zhvikovm@gmail.com">m.zhvikovm@gmail.com</a>
+        </div>
+    </div>
+    <!-- LaptopMenu Overlay -->
+    <div class="laptop-menu__overlay" data-js="overlay"></div>
+    <!-- ContactForm Overlay -->
+    <div class="laptop-menu__overlay" data-js="contact-form-overlay"></div>
+    <!-- Loader -->
+    <div class="clock-loader__overlay" data-js="loader-overlay"></div>
+    <div class="clock-loader" data-js="clock-loader"></div>
+{% endblock content %}

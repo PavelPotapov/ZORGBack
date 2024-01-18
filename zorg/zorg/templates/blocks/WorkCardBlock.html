@@ -1,0 +1,20 @@
+{% load static wagtailimages_tags %}
+<div class="carrier__vacancy-card"
+     data-js="vacancy-item"
+     data-js-contact-form-info="{&quot;date&quot;:&quot;{{ self.date }}&quot;,&quot;title&quot;:&quot;{{ self.title }}&quot;,&quot;typeWork&quot;:&quot;{{ self.type_work }}&quot;,&quot;message&quot;:&quot;{{ self.message }}&quot;,&quot;requirements&quot;:{{ requirements|safe }}}">
+    <div class="carrier__vacancy-card-inner">
+        <div class="carrier__vacancy-card-title">
+            <div class="carrier__vacancy-card-job-title">{{ self.short_title }}</div>
+            <div class="carrier__vacancy-card-job-subtitle">{{ self.type_work }}</div>
+        </div>
+        <div class="carrier__vacancy-circle">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="66"
+                 height="66"
+                 viewBox="0 0 66 66"
+                 fill="none">
+                <ellipse cx="33" cy="33.0852" rx="33" ry="32.5217" />
+            </svg>
+        </div>
+    </div>
+</div>
