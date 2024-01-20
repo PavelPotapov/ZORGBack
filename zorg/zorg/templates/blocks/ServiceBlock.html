@@ -1,0 +1,27 @@
+{% load static wagtailimages_tags %}
+<h2 class="services__title">{{ self.title }}</h2>
+<div class="services__profile">
+    <div class="services__profile-logo card--left card--w405">
+        {% image self.image max-408x517 alt="team" loading="lazy" %}
+    </div>
+    <div class="services__profile-info">
+        <h2 class="services__profile-title">
+            {{ self.profile_title_first }}
+            <br />
+            <span class="accent-text">{{ self.profile_title_second }}</span>
+        </h2>
+        <p class="services__profile-subtitle">{{ self.profile_message }}</p>
+        <div class="arrow">
+            <div class="arrow-info">Детальнее&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <a href="./pages/facility.html" class="arrow-btn block btn">УСЛУГИ</a>
+        </div>
+    </div>
+</div>
+<div class="services__partners"
+     data-css-label="{{ self.title_under_partners }}">
+    {% for block in self.partners %}
+        <div class="services__partners-item">
+            <a href="{{ block.link }}" target="_blank">{% image block.image max-187x110 class="block" loading="lazy" %}</a>
+        </div>
+    {% endfor %}
+</div>

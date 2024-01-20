@@ -1,0 +1,15 @@
+{% load static wagtailimages_tags wagtailvideos_tags %}
+
+<div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
+    <div class="swiper-zoom-container">
+        {% if self.image_gallery %}
+            {% image self.image_gallery max-1060x536  class="swiper-lazy swiper-lazy-loaded undefined" %}
+        {% elif self.video_gallery %}
+            {% video self.video_gallery autoplay loop playsinline width=256 %}
+        {% elif self.video_url %}
+            {{ self.video_url }}
+        {% else %}
+            🗿🗿🗿
+        {% endif %}
+    </div>
+</div>

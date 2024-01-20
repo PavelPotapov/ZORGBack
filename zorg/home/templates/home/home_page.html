@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static wagtailimages_tags wagtailcore_tags %}
 {% block body_class %}template-homepage{% endblock %}
-{% block extra_css %}
+{% comment %} {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
+{% endblock extra_css %} {% endcomment %}
 {% block content %}
     <!-- Header -->
     <div class="header-wrapper">
@@ -54,66 +54,70 @@
         </header>
     </div>
     <div class="flowContainer">
-      
         <main>
-            
-            <section class="gallery">
+            {% comment %} <section class="gallery">
                 <div class="container">
                     <div class="gallery__swiper">
                         <div class="swiper-container swiper-no-mousewheel">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
                                     <div class="swiper-zoom-container">
-                                        <video id="wp-custom-header-video"
-                                               autoplay
-                                               loop
-                                               playsinline
-                                               width="0"
-                                               height="0"
-                                               src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
+                                        <video id="wp-custom-header-video" autoplay loop playsinline width="0" height="0" src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
                                         </video>
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
                                     <div class="swiper-zoom-container">
-                                        <img alt=""
-                                             class="swiper-lazy swiper-lazy-loaded undefined"
-                                             src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
+                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
                                     <div class="swiper-zoom-container">
-                                        <img alt=""
-                                             class="swiper-lazy swiper-lazy-loaded undefined"
-                                             src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
+                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
                                     <div class="swiper-zoom-container">
-                                        <video id="wp-custom-header-video"
-                                               autoplay
-                                               loop
-                                               playsinline
-                                               width="0"
-                                               height="0"
-                                               src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
+                                        <video id="wp-custom-header-video" autoplay loop playsinline width="0" height="0" src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
                                         </video>
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
                                     <div class="swiper-zoom-container">
-                                        <img alt=""
-                                             class="swiper-lazy swiper-lazy-loaded undefined"
-                                             src="{% static 'assets/team-d8b232ac.png' %}" />
+                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="{% static 'assets/team-d8b232ac.png' %}" />
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
                                     <div class="swiper-zoom-container">
-                                        <img alt=""
-                                             class="swiper-lazy swiper-lazy-loaded undefined"
-                                             src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
+                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section> {% endcomment %}
+            <section class="gallery">
+                <div class="container">
+                    <div class="gallery__swiper">
+                        <div class="swiper-container swiper-no-mousewheel">
+                            <div class="swiper-wrapper">
+                                {% block extra_css %}
+                                    <style>
+                                        .swiper-lazy.swiper-lazy-loaded div {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                        .swiper-lazy.swiper-lazy-loaded div > iframe{
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    </style>
+                                {% endblock %}
+                                {% for block in page.body_gallery %}
+                                    {% include_block block %}
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
@@ -125,12 +129,13 @@
                     <p class="intro__title">
                         МЫ <span class="accent-text">ДЕЛАЕМ</span> ИГРЫ
                     </p>
-                    <p class="intro__subtitle">
+                    {% comment %} <p class="intro__subtitle">
                         Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra
                         interdum. Nascetur interdum arcu consectetur donec morbi enim quis
                         vitae ut.
-                    </p>
-                    <h2 class="intro__about-us">О нас</h2>
+                    </p> {% endcomment %}
+                    <p class="intro__subtitle">{{ page.intro_subtitle }}</p>
+                    <h2 class="intro__about-us">{{ page.intro_about_us }}</h2>
                     <div class="intro__zorg-games">
                         <div>
                             <div class="intro__zorg-games-title">
@@ -138,13 +143,7 @@
                                 <br />
                                 GAMES
                             </div>
-                            <div class="intro__zorg-games-subtitle">
-                                Lorem ipsum dolor sit amet consectetur. Massa id lobortis
-                                viverra interdum. Nascetur interdum arcu consectetur donec
-                                morbi enim quis vitae ut. Vitae aliquet elit nulla venenatis
-                                odio eu consequat malesuada. Enim risus at massa molestie at.
-                                Amet amet enim ut sit tristique placerat arcu.
-                            </div>
+                            <div class="intro__zorg-games-subtitle">{{ page.intro_about_us_subtitle }}</div>
                         </div>
                         <div>
                             <div class="team-img">{% image page.image_about_us max-768x609 loading="lazy" %}</div>
@@ -158,7 +157,7 @@
             </section>
             <section class="projects">
                 <div class="container">
-                    <h2 class="projects__title">Наши проекты</h2>
+                    <h2 class="projects__title">{{ page.our_projects_title }}</h2>
                     <div class="projects__wrapper">
                         <div class="projects__browl">
                             <img class="projects__browl-image block"
@@ -166,13 +165,11 @@
                                  alt="Browl Royale Logo"
                                  loading="lazy" />
                             <p class="projects__browl-title">
-                                Lorem ipsum dolor sit amet consectetur. Massa id lobortis
-                                viverra interdum.
+                                {{ page.browl_royale_text1 }}
                                 <br />
-                                Vitae aliquet elit nulla venenatis
-                                odio eu consequat malesuada. Enim risus at massa molestie at.
+                                {{ page.browl_royale_text2 }}
                                 <br />
-                                Amet amet enim ut sit tristique placerat arcu.
+                                {{ page.browl_royale_text3 }}
                             </p>
                             <div class="projects__stores">
                                 <a href="#" target="_blank">
@@ -270,7 +267,7 @@
                             </div>
                             <div class="projects__item--more">
                                 <a href="./pages/portfolio.html">
-                                    <img src="./public/img/+.svg" alt="+" loading="lazy" />
+                                    <img src="{% static 'assets/plus.svg' %}" alt="+" loading="lazy" />
                                 </a>
                             </div>
                         </div>
@@ -279,86 +276,15 @@
             </section>
             <section class="services">
                 <div class="container">
-                    <h2 class="services__title">Услуги</h2>
-                    <div class="services__profile">
-                        <div class="services__profile-logo card--left card--w405">
-                            <img src="./public/img/team.png" alt="team" loading="lazy" />
-                        </div>
-                        <div class="services__profile-info">
-                            <h2 class="services__profile-title">
-                                Наш профиль
-                                <br />
-                                <span class="accent-text">Создание мобильных игр</span>
-                            </h2>
-                            <p class="services__profile-subtitle">Это то, что мы любим, чем болеем и что готовы сделать для вас.</p>
-                            <div class="arrow">
-                                <div class="arrow-info">Детальнее&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                                <a href="./pages/facility.html" class="arrow-btn block btn">УСЛУГИ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="services__partners">
-                        <div class="services__partners-item">
-                            <a href="https://wannaplay.gg/" target="_blank">
-                                <img class="block"
-                                     src="{% static 'assets/partners/WannaPlay.png' %}"
-                                     alt="WannaPlay"
-                                     loading="lazy" />
-                            </a>
-                        </div>
-                        <div class="services__partners-item">
-                            <a href="https://hitappsgames.com/" target="_blank">
-                                <img class="block"
-                                     src="{% static 'assets/partners/HITAPPS-LOGO.png' %}"
-                                     alt="HITAPPS-LOGO"
-                                     loading="lazy" />
-                            </a>
-                        </div>
-                        <div class="services__partners-item">
-                            <a href="https://madpixel.dev/ru/madpixel_duplicate/" target="_blank">
-                                <img class="block"
-                                     src="{% static 'assets/partners/Mad-Pixel-Games-LTD-Logo.png' %}"
-                                     alt="Mad-Pixel-Games"
-                                     loading="lazy"
-                                     height="100" />
-                            </a>
-                        </div>
-                        <div class="services__partners-item">
-                            <a href="https://say.games/" target="_blank">
-                                <img class="block"
-                                     src="{% static 'assets/partners/SayGames-Logo.png' %}"
-                                     alt="SayGames"
-                                     loading="lazy" />
-                            </a>
-                        </div>
-                        <div class="services__partners-item">
-                            <a href="https://azurgames.com/ru/main/" target="_blank">
-                                <img class="block"
-                                     src="{% static 'assets/partners/Azur-Games.png' %}"
-                                     alt="Azur-Games"
-                                     loading="lazy" />
-                            </a>
-                        </div>
-                        <div class="services__partners-item">
-                            <a href="https://vaveda.games/" target="_blank">
-                                <img src="{% static 'assets/partners/vaveda.png' %}"
-                                     alt="Vaveda"
-                                     loading="lazy" />
-                            </a>
-                        </div>
-                    </div>
+                    {% include_block page.body_service %}
                 </div>
             </section>
             <section class="carrier">
                 <div class="container">
-                    <h2 class="carrier__title">Карьера</h2>
-                    <p class="carrier__subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra
-                        interdum. Nascetur interdum arcu consectetur donec morbi enim quis
-                        vitae ut.
-                    </p>
+                    <h2 class="carrier__title">{{ page.work_title }}</h2>
+                    <p class="carrier__subtitle">{{ page.work_message }}</p>
                     <div class="carrier__vacancy carrier__vacancy--mb174">
-                        {% for block in page.body %}
+                        {% for block in page.body_work %}
                             {% include_block block %}
                         {% endfor %}
                         <a href="/pages/advance.html">
@@ -413,7 +339,7 @@
                             <input type="submit" class="carrier__application-submit block" />
                         </form>
                         <div class="card--right card--w405 card--mh552">
-                            <img src="./public/img/team.png" alt="carrier-image" loading="lazy" />
+                            {% image page.image_carrier max-405x552 alt="carrier-image" loading="lazy"  %}
                         </div>
                     </div>
                 </div>
