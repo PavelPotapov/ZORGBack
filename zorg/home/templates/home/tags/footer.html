@@ -1,0 +1,24 @@
+{% load static wagtailimages_tags wagtailcore_tags %}
+<footer class="footer">
+    <div class="footer__top">
+        <div class="footer__logo">{% image footer.image_carrier max-284x240 alt="Zorg-games" loading="lazy" %}</div>
+        <div class="footer__policy">
+            <div class="footer__policy-content">
+                <span class="footer__years">{{ footer.year_text }}</span>
+                <div>{{ footer.policy_text }} {{ footer.conditions_text }}</div>
+            </div>
+        </div>
+        <div class="footer__contacts">
+            <div class="footer__contacts-inner">
+                <a href="{{ footer.link_tel_text }}">{{ footer.tel_text }}</a>
+                <a href="{{ footer.mail_link }}">{{ footer.mail_text }}</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        {{ footer.text_footer_bottom }}
+        <a href="{{ footer.policy_link }}"
+           class="footer__bottom-policy"
+           target="_blank">{{ footer.accept_text }}</a>
+    </div>
+</footer>

@@ -10,6 +10,8 @@ from wagtail.blocks import CharBlock
 from .blocks import WorkCardBlock, GalleryBlock, ServiceBlock
 from wagtailvideos.blocks import VideoChooserBlock
 
+from wagtail.snippets.models import register_snippet
+
 
 class HomePage(Page):
     # поля в бд
@@ -167,3 +169,104 @@ class HomePage(Page):
 
 class Form():
     pass
+
+
+@register_snippet
+class Footer(models.Model):
+
+    image_carrier = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True, null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name="Картинка в футере слева"
+    )
+
+    year_text = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Года работы компании в футере"
+    )
+
+    policy_text = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Политика конфиденциальности текст"
+    )
+
+    policy_link = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Ссылка на политику конфиденциальности"
+    )
+
+    conditions_text = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Условия оказания услуг текст"
+    )
+
+    conditions_link = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Ссылка на условия"
+    )
+
+    text_footer_bottom = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Текст про политику конфиденциальности внизу футера"
+    )
+
+    accept_text = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Текст принятия политики"
+    )
+
+    tel_text = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Текст телефон"
+    )
+
+    link_tel_text = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Cсылка на телефон, формат: tel:+79028607651"
+    )
+
+    mail_text = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Текст email"
+    )
+
+    mail_link = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Cсылка на  email, форма: mailto:m.zhvikovm@gmail.com"
+    )
+
+    panels = [
+        FieldPanel("image_carrier"), FieldPanel(
+            "year_text"), FieldPanel("policy_text"), FieldPanel("policy_link"), FieldPanel("conditions_text"), FieldPanel("conditions_link"), FieldPanel("text_footer_bottom"), FieldPanel("accept_text"), FieldPanel("mail_text"), FieldPanel("mail_link"), FieldPanel("tel_text"), FieldPanel("link_tel_text")
+    ]
+
+    class Meta:
+        verbose_name = "Футер"
+        verbose_name_plural = "Футеры"
+
+    def __str__(self):
+        return "Футер"
