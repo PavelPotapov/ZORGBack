@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.urls import include, path
 from django.contrib import admin
+from django.http import Http404
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
@@ -8,12 +9,14 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from home import views as home_views
 from search import views as search_views
+from ourstudia import views as studia_views
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
+    path("pages/studia", studia_views.hello_studia),
     path("", home_views.hello_world, name="test"),
 ]
 

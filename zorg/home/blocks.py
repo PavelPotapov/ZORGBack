@@ -61,7 +61,6 @@ class WorkCardBlock(StructBlock):
             if "requirements" in dict(value):
                 for element in dict(value)['requirements'].bound_blocks:
                     requirements.append(element.value)
-                print(str(requirements).replace("'", "&quot;"), '!!')
                 return str(requirements).replace("'", "&quot;")
 
     def render(self, value, context=None):

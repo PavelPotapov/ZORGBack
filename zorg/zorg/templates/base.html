@@ -42,7 +42,9 @@
     </head>
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+        {% header_tag %}
         {% block content %}{% endblock %}
+		{% laptopmenu_tag %}
         {% footer_tag %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/zorg.js' %}"></script>

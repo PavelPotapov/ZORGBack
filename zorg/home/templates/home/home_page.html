@@ -1,103 +1,9 @@
 {% extends "base.html" %}
 {% load static wagtailimages_tags wagtailcore_tags %}
 {% block body_class %}template-homepage{% endblock %}
-{% comment %} {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %} {% endcomment %}
 {% block content %}
-    <!-- Header -->
-    <div class="header-wrapper">
-        <h1 class="sr-only">ZORG GAMES</h1>
-        <header class="header">
-            <div class="logo">
-                <a href="/">
-                    <img class="logo__image" src={{ headerImage }} alt="Logo" width="104" height="24" />
-                </a>
-            </div>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="/pages/studia.html">Студия</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="/pages/portfolio.html">Портфолио</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="/pages/advance.html">Работа</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="/pages/facility.html">Услуги</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="change-language" data-js="change-language">
-                <select id="languages">
-                    <option value="EN">EN</option>
-                    <option value="EN2">EN2</option>
-                    <option value="EN3">EN3</option>
-                    <option value="EN4">EN4</option>
-                    <option value="EN5">EN5</option>
-                </select>
-            </div>
-            <!-- Theme checker -->
-            <div class="theme-checker-container" data-js="theme-checker-container">
-                <input type="checkbox" id="toggle-change-color-theme" />
-                <label class="theme-checker" for="toggle-change-color-theme">
-                    <div id="star"></div>
-                    <div id="moon"></div>
-                </label>
-            </div>
-            <div class="burger" data-js="burger"></div>
-        </header>
-    </div>
     <div class="flowContainer">
         <main>
-            {% comment %} <section class="gallery">
-                <div class="container">
-                    <div class="gallery__swiper">
-                        <div class="swiper-container swiper-no-mousewheel">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
-                                    <div class="swiper-zoom-container">
-                                        <video id="wp-custom-header-video" autoplay loop playsinline width="0" height="0" src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
-                                    <div class="swiper-zoom-container">
-                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
-                                    <div class="swiper-zoom-container">
-                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
-                                    <div class="swiper-zoom-container">
-                                        <video id="wp-custom-header-video" autoplay loop playsinline width="0" height="0" src="https://zorg-games.com/wp-content/uploads/2021/07/Zorg-Games.com-Zorg.Games-Intro-Video-Zorg-Games-Ver.1.mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
-                                    <div class="swiper-zoom-container">
-                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="{% static 'assets/team-d8b232ac.png' %}" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">
-                                    <div class="swiper-zoom-container">
-                                        <img alt="" class="swiper-lazy swiper-lazy-loaded undefined" src="https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </section> {% endcomment %}
             <section class="gallery">
                 <div class="container">
                     <div class="gallery__swiper">
@@ -129,11 +35,6 @@
                     <p class="intro__title">
                         МЫ <span class="accent-text">ДЕЛАЕМ</span> ИГРЫ
                     </p>
-                    {% comment %} <p class="intro__subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra
-                        interdum. Nascetur interdum arcu consectetur donec morbi enim quis
-                        vitae ut.
-                    </p> {% endcomment %}
                     <p class="intro__subtitle">{{ page.intro_subtitle }}</p>
                     <h2 class="intro__about-us">{{ page.intro_about_us }}</h2>
                     <div class="intro__zorg-games">
@@ -177,8 +78,7 @@
                                          width="197"
                                          class="block projects__stores-image"
                                          loading="lazy"
-                                         srcset="{% static 'assets/app-store.png 1x,
-                                                 static/assets/app-store2x.png 2x' %}"
+                                         srcset="{% static 'assets/app-store.png 1x, static/assets/app-store2x.png 2x' %}"
                                          alt="App Store Logo"
                                          loading="lazy" />
                                 </a>
@@ -187,8 +87,7 @@
                                          width="197"
                                          class="block projects__stores-image"
                                          loading="lazy"
-                                         srcset="{% static 'assets/google-play.png 1x,
-                                                 static/assets/google-play2x.png 2x' %}"
+                                         srcset="{% static 'assets/google-play.png 1x, static/assets/google-play2x.png 2x' %}"
                                          alt="Google Play Logo"
                                          loading="lazy" />
                                 </a>
@@ -445,34 +344,6 @@
                    style="display: none" />
         </form>
     </div>
-    <!-- Laptpo menu -->
-    <div class="laptop-menu" data-js="laptop-menu">
-        <nav class="laptop-menu__nav">
-            <ul class="laptop-menu__list">
-                <li class="laptop-menu__item">
-                    <a href="/pages/studia.html">Студия</a>
-                </li>
-                <li class="laptop-menu__item">
-                    <a href="/pages/portfolio.html">Портфолио</a>
-                </li>
-                <li class="laptop-menu__item">
-                    <a href="/pages/advance.html">Работа</a>
-                </li>
-                <li class="laptop-menu__item">
-                    <a href="/pages/facility.html">Услуги</a>
-                </li>
-                <li class="laptop-menu__item">
-                    <a href="#">Контакты</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="social">
-            <a class="block" href="tel:79028607651">+7 (902) 860-76-51</a>
-            <a class="block" href="mailto:m.zhvikovm@gmail.com">m.zhvikovm@gmail.com</a>
-        </div>
-    </div>
-    <!-- LaptopMenu Overlay -->
-    <div class="laptop-menu__overlay" data-js="overlay"></div>
     <!-- ContactForm Overlay -->
     <div class="laptop-menu__overlay" data-js="contact-form-overlay"></div>
     <!-- Loader -->

@@ -1,0 +1,49 @@
+{% load static wagtailimages_tags wagtailcore_tags %}
+<!-- Header -->
+<div class="header-wrapper">
+    <h1 class="sr-only">ZORG GAMES</h1>
+    <header class="header">
+        <div class="logo">
+            <a href="/">
+                {% image header.image_carrier max-104x52 alt="Zorg-games" loading="lazy" %}
+            </a>
+        </div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="{{header.link_main}}">{{header.title_main}}</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{header.link_portfolio}}">{{header.title_portfolio}}</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{header.link_work}}">{{header.title_work}}</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{header.link_facility}}">{{header.title_facility}}</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{header.link_contact}}">{{header.title_contact}}</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="change-language" data-js="change-language">
+            <select id="languages">
+                <option value="EN">EN</option>
+                <option value="EN2">EN2</option>
+                <option value="EN3">EN3</option>
+                <option value="EN4">EN4</option>
+                <option value="EN5">EN5</option>
+            </select>
+        </div>
+        <!-- Theme checker -->
+        <div class="theme-checker-container" data-js="theme-checker-container">
+            <input type="checkbox" id="toggle-change-color-theme" />
+            <label class="theme-checker" for="toggle-change-color-theme">
+                <div id="star"></div>
+                <div id="moon"></div>
+            </label>
+        </div>
+        <div class="burger" data-js="burger"></div>
+    </header>
+</div>
