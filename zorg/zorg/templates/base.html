@@ -25,12 +25,14 @@
         <script type="module"
                 crossorigin
                 src="{% static 'assets/main-97b8ff3d.js' %}"></script>
-        <link rel="modulepreload"
-              crossorigin
-              href="{% static 'assets/colorTheme-68c1091f.js' %}">
+
+             <script type="module"
+                crossorigin
+                src="{% static 'assets/portfolio-21862d62.js' %}"></script>
         <link rel="modulepreload"
               crossorigin
               href="{% static 'assets/loader-896b65bd.js' %}">
+       
         <link rel="modulepreload"
               crossorigin
               href="{% static 'assets/contactForm-09814230.js' %}">
@@ -38,7 +40,14 @@
               crossorigin
               href="{% static 'assets/index-e6a9e3f6.js' %}">
         <link rel="stylesheet" href="{% static 'assets/colorTheme-a8d8e184.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/index-7399ad2e.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/index-7399ad2e.css' %}"> 
+
+        {% comment %} <script type="module" crossorigin src="/assets/main-97b8ff3d.js"></script>
+		<link rel="modulepreload" crossorigin href="/assets/colorTheme-68c1091f.js">
+		<link rel="modulepreload" crossorigin href="/assets/loader-896b65bd.js">
+		<link rel="modulepreload" crossorigin href="/assets/contactForm-09814230.js">
+		<link rel="modulepreload" crossorigin href="/assets/index-e6a9e3f6.js">
+		 {% endcomment %}
     </head>
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}

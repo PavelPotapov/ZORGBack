@@ -10,6 +10,8 @@ from wagtail.documents import urls as wagtaildocs_urls
 from home import views as home_views
 from search import views as search_views
 from ourstudia import views as studia_views
+from portfolio import views as portfolio_views
+
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -17,6 +19,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path("pages/studia", studia_views.hello_studia),
+    path("pages/portfolio", portfolio_views.hello_portfolio),
     path("", home_views.hello_world, name="test"),
 ]
 
