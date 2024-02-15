@@ -11,6 +11,7 @@ from home import views as home_views
 from search import views as search_views
 from ourstudia import views as studia_views
 from portfolio import views as portfolio_views
+from work import views as work_views
 
 
 urlpatterns = [
@@ -18,9 +19,11 @@ urlpatterns = [
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
-    path("pages/studia", studia_views.hello_studia),
-    path("pages/portfolio", portfolio_views.hello_portfolio),
-    path("", home_views.hello_world, name="test"),
+    path("work/", work_views.hello_work),
+    path("studia/", studia_views.hello_studia),
+    path("portfolio/", portfolio_views.hello_portfolio),
+    path("filter", portfolio_views.filter_portfolio),
+    path("", home_views.hello_world, name="test")
 ]
 
 

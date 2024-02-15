@@ -1,0 +1,16 @@
+{% load static wagtailimages_tags %}
+
+<div class="infoblock">
+    <div class="card--left card--w226">
+        {% image self.image max-215x215 alt="step" loading="lazy" %}
+    </div>
+    <div class="infoblock__info">
+        <div class="infoblock__title">
+            {{ self.title }}
+            <span class="accent-text">{{ self.title2 }}</span>
+        </div>
+        <div class="infoblock__subtitle">
+            {{ self.subtitle }}
+        </div>
+    </div>
+</div>

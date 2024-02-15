@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "search",
     "ourstudia",
     "portfolio",
+    "work",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.modeladmin",

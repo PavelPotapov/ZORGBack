@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block content %}
+<main>
+    <section class="advance">
+        <div class="container">
+            <div class="advance__wrapper">
+                <div class="advance__img card--left card--w405">
+                    {% image page.image_work max-435x569 alt="team-image" loading="lazy"  %}
+                </div>
+                <div class="advance__info">
+                    <div class="advance__zorg-games-title">
+                        {{page.title1}} <br />
+                        <span class="accent-text">{{page.title2}}</span>
+                    </div>
+                    <p class="advance__zorg-games-subtitle">
+                        {{page.subtitle}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="work-condition">
+        <div class="container">
+            <div class="work-condition__wrapper">
+                <div class="infoblock-container">
+                    {% for block in page.body_advantage %}
+                        {% include_block block %}
+                    {% endfor %}     
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="vacancy">
+					<div class="container">
+						<p class="vacancy__title">
+							В ZORG GAMES созданы все условия для раскрытия творческого
+							потенциала и реализации самых смелых профессиональных амбиций.
+						</p>
+						<p class="vacancy__title vacancy__subtitle">
+							<span class="accent-text"> Присоединяйтесь!</span>
+						</p>
+						<div class="carrier__vacancy">
+							{% for block in page.body_work %}
+                            	{% include_block block %}
+                        	{% endfor %}
+						</div>
+						<div class="vacancy__get-contact">
+							<div class="vacancy__get-contact--title">
+								Не нашли подходящую вакансию?
+							</div>
+							<div class="vacancy__get-contact--subtitle">
+								Оставьте свои контакты и при появлении нужной вакансии мы с вами
+								свяжемся!
+							</div>
+							<button class="vacancy__get-contact--btn" data-js="vacancy-item">
+								Оставить контакт
+							</button>
+							<div class="vacancy__img card--right card--w326 card--rot15">
+								<img src="../img/team.png" alt="carrier-image" />
+							</div>
+						</div>
+					</div>
+	</section>
+</main>
+{% endblock %}

@@ -13,8 +13,6 @@ from wagtail.snippets.models import register_snippet
 
 
 
-
-
 # Create your models here.
 class PortfolioCard(models.Model):
     title = models.CharField(blank=True, null=True, max_length=150)
@@ -28,6 +26,9 @@ class PortfolioCard(models.Model):
     image_one = models.ImageField(upload_to='images/')
     image_two = models.ImageField(upload_to='images/')
     image_three = models.ImageField(upload_to='images/')
+
+    order_for_main = models.IntegerField(null=True, blank=True)
+    
 
 
 class PortfolioPage(Page):
