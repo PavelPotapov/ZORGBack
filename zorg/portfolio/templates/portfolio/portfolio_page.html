@@ -2,153 +2,153 @@
 {% load static wagtailimages_tags wagtailcore_tags %}
 {% block body_class %}template-homepage{% endblock %}
 {% block content %}
-    <div class="flowContainer" data-js-portfolio-detail-start='{% for key, value in startconfig.items %}{{value}}{% endfor %}'>
-        <main>
-            <section class="portfolio">
-					<div class="container">
-						<div class="portfolio__title">
-							<div class="portfolio__header"></div>
-							<div class="portfolio__filter" data-js="filter">Фильтры</div>
-							<div class="portfolio__filter-container">
-								<div class="portfolio__filter-list" data-js="filter-list">
-									<form
-										class="portfolio__filter-form"
-										id="form-filter"
-										data-js="form-filter"
-										enctype="multipart/form-data"
-										data-js-details='{"url": "/filter"}'
-									>
-										{% csrf_token %}
-										<fieldset class="portfolio__filter-fieldset">
-										
-											<legend class="portfolio__filter-list-legend">
-												Стили
-											</legend>
-											{% for style in styles %}
-											<div class="portfolio__filter-input-block">
-												<input
-													type="checkbox"
-													class="custom-checkbox__field"
-													id="{{style}}"
-													name="{{style}}"
-													data-js="filter-check"
-												/>
-												<label
-													for="{{style}}"
-													class="custom-checkbox__label portfolio__filter-checkbox"
-												>
-													{{style}}</label
-												>
-											</div>
-											{% endfor %}
-										</fieldset>
-										<fieldset class="portfolio__filter-fieldset">
-											<legend class="portfolio__filter-list-legend">
-												Жанр
-											</legend>
-											{% for category in categories %}
-												<div class="portfolio__filter-input-block">
-													<input
-														type="checkbox"
-														class="custom-checkbox__field"
-														id="{{category}}"
-														name="{{category}}"
-														data-js="filter-check"
-													/>
-													<label
-														for="{{category}}"
-														class="custom-checkbox__label portfolio__filter-checkbox"
-													>
-														{{category}} <span></span
-													></label>
-												</div>
-											{% endfor %}
-										</fieldset>
-									</form>
-								</div>
-								<div class="portfolio__filter-form-submit">
-									<input
-										type="submit"
-										value="Искать!"
-										class="portfolio__filter-submit"
-										form="form-filter"
-										data-js="filter-submit"
-									/>
-									<button
-										class="portfolio__filter-clear"
-										data-js="filter-clear"
-									>
-										Сбросить
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="portfolio__main-block" data-js="popup-block">
-							<div
-								class="portfolio__main-block-cross"
-								data-js="popup-cross"
-							></div>
-							<div class="portfolio__main-block-top">
-								<div class="portfolio__main-block-img">
-									<img
-										src="../img/browl-item.png"
-										alt="BrowlLogo"
-										data-js="popup-logo"
-									/>
-								</div>
-								<div class="portfolio__main-block-info">
-									<span
-										class="portfolio__main-block-title"
-										data-js="popup-title"
-										>Brawl Royale</span
-									>
-									<span class="portfolio__main-block-date" data-js="popup-date"
-										>25.05.2022</span
-									>
-								</div>
-								<p class="portfolio__main-block-text" data-js="popup-text">
-									Lorem ipsum dolor sit amet consectetur. Massa id lobortis
-									viverra interdum.
-								</p>
-							</div>
-							<div class="portfolio__main-block-bottom">
-								<div
-									class="portfolio__main-game-container"
-									data-js="popup-container-images"
-								>
-									<div class="portfolio__main-game-card" data-js="popup-image">
-										<img
-											src="../img/team.png"
-											alt=""
-											class="portfolio__main-game-card-img"
+ 
+<main class='main' data-js-portfolio-detail-start='{% for key, value in startconfig.items %}{{value}}{% endfor %}'>
+	<section class="portfolio">
+			<div class="container">
+				<div class="portfolio__title">
+					<div class="portfolio__header"></div>
+					<div class="portfolio__filter" data-js="filter">Фильтры</div>
+					<div class="portfolio__filter-container">
+						<div class="portfolio__filter-list" data-js="filter-list">
+							<form
+								class="portfolio__filter-form"
+								id="form-filter"
+								data-js="form-filter"
+								enctype="multipart/form-data"
+								data-js-details='{"url": "/filter"}'
+							>
+								{% csrf_token %}
+								<fieldset class="portfolio__filter-fieldset">
+								
+									<legend class="portfolio__filter-list-legend">
+										Стили
+									</legend>
+									{% for style in styles %}
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="{{style}}"
+											name="{{style}}"
+											data-js="filter-check"
 										/>
+										<label
+											for="{{style}}"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											{{style}}</label
+										>
 									</div>
-									<div
-										class="portfolio__main-game-card"
-										data-js="popup-image"
-									></div>
-									<div
-										class="portfolio__main-game-card"
-										data-js="popup-image"
-									></div>
-								</div>
-							</div>
+									{% endfor %}
+								</fieldset>
+								<fieldset class="portfolio__filter-fieldset">
+									<legend class="portfolio__filter-list-legend">
+										Жанр
+									</legend>
+									{% for category in categories %}
+										<div class="portfolio__filter-input-block">
+											<input
+												type="checkbox"
+												class="custom-checkbox__field"
+												id="{{category}}"
+												name="{{category}}"
+												data-js="filter-check"
+											/>
+											<label
+												for="{{category}}"
+												class="custom-checkbox__label portfolio__filter-checkbox"
+											>
+												{{category}} <span></span
+											></label>
+										</div>
+									{% endfor %}
+								</fieldset>
+							</form>
 						</div>
-						<div class="portfolio__content" data-js="portfolio-content">
-                            {% for block in cards %}
-                                    <div
-                                    class="portfolio__item"
-                                    data-js="game-item"
-                                    data-js-portfolio-detail='{% for key, value in result_dict.items %}{% if key == block.title %}{{value}}{% endif %}{% endfor %}''
-                                    >
-                                        <img class="portfolio__item-img" alt="GameLogo" src="{{block.image_logo.url}}"/>
-                                    </div>
-                            {% endfor %}
-                        </div>
+						<div class="portfolio__filter-form-submit">
+							<input
+								type="submit"
+								value="Искать!"
+								class="portfolio__filter-submit"
+								form="form-filter"
+								data-js="filter-submit"
+							/>
+							<button
+								class="portfolio__filter-clear"
+								data-js="filter-clear"
+							>
+								Сбросить
+							</button>
+						</div>
 					</div>
-			</section>
-        </main>
-    </div>
+				</div>
+				<div class="portfolio__main-block" data-js="popup-block">
+					<div
+						class="portfolio__main-block-cross"
+						data-js="popup-cross"
+					></div>
+					<div class="portfolio__main-block-top">
+						<div class="portfolio__main-block-img">
+							<img
+								src="../img/browl-item.png"
+								alt="BrowlLogo"
+								data-js="popup-logo"
+							/>
+						</div>
+						<div class="portfolio__main-block-info">
+							<span
+								class="portfolio__main-block-title"
+								data-js="popup-title"
+								>Brawl Royale</span
+							>
+							<span class="portfolio__main-block-date" data-js="popup-date"
+								>25.05.2022</span
+							>
+						</div>
+						<p class="portfolio__main-block-text" data-js="popup-text">
+							Lorem ipsum dolor sit amet consectetur. Massa id lobortis
+							viverra interdum.
+						</p>
+					</div>
+					<div class="portfolio__main-block-bottom">
+						<div
+							class="portfolio__main-game-container"
+							data-js="popup-container-images"
+						>
+							<div class="portfolio__main-game-card" data-js="popup-image">
+								<img
+									src="../img/team.png"
+									alt=""
+									class="portfolio__main-game-card-img"
+								/>
+							</div>
+							<div
+								class="portfolio__main-game-card"
+								data-js="popup-image"
+							></div>
+							<div
+								class="portfolio__main-game-card"
+								data-js="popup-image"
+							></div>
+						</div>
+					</div>
+				</div>
+				<div class="portfolio__content" data-js="portfolio-content">
+					{% for block in cards %}
+							<div
+							class="portfolio__item"
+							data-js="game-item"
+							data-js-portfolio-detail='{% for key, value in result_dict.items %}{% if key == block.title %}{{value}}{% endif %}{% endfor %}''
+							>
+								<img class="portfolio__item-img" alt="GameLogo" src="{{block.image_logo.url}}"/>
+							</div>
+					{% endfor %}
+				</div>
+			</div>
+	</section>
+</main>
+
 
 <!-- Portfolio Overlay -->
 <div class="portfolio__overlay" data-js="popup-overlay"></div>

@@ -50,12 +50,15 @@
                 src="{% static 'assets/portfolio-dfb60a2f.js' %}"></script>
        
         <script type="module" crossorigin src="{% static 'assets/advance-9f608a35.js' %}"></script>
+        <script type="module" crossorigin src="{% static 'assets/modal-c9ab9ad7.js' %}"></script>
     </head>
     <body class="{% block body_class %}{% endblock %}">
-        {% header_tag %}
-        {% block content %}{% endblock %}
-		{% laptopmenu_tag %}
-
+        <div class="flowContainer">
+            {% header_tag %}
+            {% block content %}{% endblock %}
+            {% footer_tag %}
+        </div>
+        {% laptopmenu_tag %}
         <!-- Contact Form -->
         <div class="contact-modal" data-js="contact-modal">
             <div class="contact-modal__cross" data-js="contact-modal-cross"></div>
@@ -160,7 +163,7 @@
         <!-- Loader -->
         <div class="clock-loader__overlay" data-js="loader-overlay"></div>
         <div class="clock-loader" data-js="clock-loader"></div>
-        {% footer_tag %}
+       
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/zorg.js' %}"></script>
         {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}

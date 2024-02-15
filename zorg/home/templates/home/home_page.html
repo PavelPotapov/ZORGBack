@@ -3,191 +3,188 @@
 {% block body_class %}template-homepage{% endblock %}
 {% block content %}
 
-
-
-<div class="flowContainer">
-        <main>
-            <section class="gallery">
-                <div class="container">
-                    <div class="gallery__swiper">
-                        <div class="swiper-container swiper-no-mousewheel">
-                            <div class="swiper-wrapper">
-                                {% block extra_css %}
-                                    <style>
-                                        .swiper-lazy.swiper-lazy-loaded div {
-                                            width: 100%;
-                                            height: 100%;
-                                        }
-                                        .swiper-lazy.swiper-lazy-loaded div > iframe{
-                                            width: 100%;
-                                            height: 100%;
-                                        }
-                                    </style>
-                                {% endblock %}
-                                {% for block in page.body_gallery %}
-                                    {% include_block block %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="intro">
-                <div class="container">
-                    <p class="intro__title">
-                        МЫ <span class="accent-text">ДЕЛАЕМ</span> ИГРЫ
-                    </p>
-                    <p class="intro__subtitle">{{ page.intro_subtitle }}</p>
-                    <h2 class="intro__about-us">{{ page.intro_about_us }}</h2>
-                    <div class="intro__zorg-games">
-                        <div>
-                            <div class="intro__zorg-games-title">
-                                <span class="accent-text">ZORG</span>
-                                <br />
-                                GAMES
-                            </div>
-                            <div class="intro__zorg-games-subtitle">{{ page.intro_about_us_subtitle }}</div>
-                        </div>
-                        <div>
-                            <div class="team-img">{% image page.image_about_us max-768x609 loading="lazy" %}</div>
-                        </div>
-                    </div>
-                    <div class="arrow">
-                        <div class="arrow-info">Узнать больше</div>
-                        <a href="./pages/studia.html" class="arrow-btn block btn">студия</a>
-                    </div>
-                </div>
-            </section>
-            <section class="projects">
-                <div class="container">
-                    <h2 class="projects__title">{{ page.our_projects_title }}</h2>
-                    <div class="projects__wrapper">
-                        <div class="projects__browl">
-                            <img class="projects__browl-image block"
-                                 src="{% static 'assets/browl-royale.png' %}"
-                                 alt="Browl Royale Logo"
-                                 loading="lazy" />
-                            <p class="projects__browl-title">
-                                {{ page.browl_royale_text1 }}
-                                <br />
-                                {{ page.browl_royale_text2 }}
-                                <br />
-                                {{ page.browl_royale_text3 }}
-                            </p>
-                            <div class="projects__stores">
-                                <a href="#" target="_blank">
-                                    <img height="58"
-                                         width="197"
-                                         class="block projects__stores-image"
-                                         loading="lazy"
-                                         srcset="{% static 'assets/app-store.png 1x, static/assets/app-store2x.png 2x' %}"
-                                         alt="App Store Logo"
-                                         loading="lazy" />
-                                </a>
-                                <a href="#" target="_blank">
-                                    <img height="58"
-                                         width="197"
-                                         class="block projects__stores-image"
-                                         loading="lazy"
-                                         srcset="{% static 'assets/google-play.png 1x, static/assets/google-play2x.png 2x' %}"
-                                         alt="Google Play Logo"
-                                         loading="lazy" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="projects__list">
-                            {% for card in portfoliocards %}
-                            <div class="projects__item">
-                                <a href="portfolio?title={{card.title}}" target="_blank">
-                                    <img src="{{card.image_logo.url}}"
-                                         alt="{{card.title}}"
-                                         loading="lazy"
-                                         width="97"
-                                         height="97"
-                                         loading="lazy" />
-                                </a>
-                            </div>
-                            {% endfor %}
-                            <div class="projects__item--more">
-                                <a href="portfolio">
-                                    <img src="{% static 'assets/plus.svg' %}" alt="+" loading="lazy" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="services">
-                <div class="container">
-                    {% include_block page.body_service %}
-                </div>
-            </section>
-            <section class="carrier">
-                <div class="container">
-                    <h2 class="carrier__title">{{ page.work_title }}</h2>
-                    <p class="carrier__subtitle">{{ page.work_message }}</p>
-                    <div class="carrier__vacancy carrier__vacancy--mb174">
-                        {% for block in page.body_work %}
+<main>
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery__swiper">
+                <div class="swiper-container swiper-no-mousewheel">
+                    <div class="swiper-wrapper">
+                        {% block extra_css %}
+                            <style>
+                                .swiper-lazy.swiper-lazy-loaded div {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                .swiper-lazy.swiper-lazy-loaded div > iframe{
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            </style>
+                        {% endblock %}
+                        {% for block in page.body_gallery %}
                             {% include_block block %}
                         {% endfor %}
-                        <a href="/pages/advance.html">
-                            <div class="carrier__vacancy-card carrier__vacancy-card--more"
-                                 data-js="vacancy-item">
-                                <div class="carrier__vacancy-card--more-title">Полный список вакансий</div>
-                                <div class="carrier__vacancy--more-circle">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         width="66"
-                                         height="66"
-                                         viewBox="0 0 66 66"
-                                         fill="#99CC00">
-                                        <circle cx="33" cy="33" r="33" fill="#99CC00" />
-                                        <path d="M14.4878 32.9996H47.8795M38.2705 44.6316L49.1872 33.7149C49.5822 33.3199 49.5822 32.6794 49.1872 32.2844L38.2705 21.3677" stroke="currentColor" stroke-width="6.6" stroke-linecap="round" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="carrier__application">
-                        <form action="#" class="carrier__application-form">
-                            <input type="text"
-                                   class="carrier__application-input block"
-                                   placeholder="Имя"
-                                   name="name"
-                                   required />
-                            <input type="email"
-                                   class="carrier__application-input block"
-                                   placeholder="Почта"
-                                   name="email"
-                                   required />
-                            <input type="text"
-                                   class="carrier__application-input block"
-                                   placeholder="Тема"
-                                   name="theme"
-                                   required />
-                            <textarea class="carrier__application-input carrier__application-text-area block"
-                                      name="message"
-                                      id="message-carrier"
-                                      placeholder="Ваше сообщение"
-                                      required></textarea>
-                            <input type="checkbox"
-                                   class="custom-checkbox__field"
-                                   id="personal-data-checkbox"
-                                   name="personal-data"
-                                   required />
-                            <label for="personal-data-checkbox"
-                                   class="custom-checkbox__label carrier__application-checkbox">
-                                Даю согласие на&nbsp;
-                                <a href="#" target="_blank" class="carrier__application-personal">обработку личных данных</a>
-                            </label>
-                            <input type="submit" class="carrier__application-submit block" />
-                        </form>
-                        <div class="card--right card--w405 card--mh552">
-                            {% image page.image_carrier max-405x552 alt="carrier-image" loading="lazy"  %}
-                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
-</div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <section class="intro">
+        <div class="container">
+            <p class="intro__title">
+                МЫ <span class="accent-text">ДЕЛАЕМ</span> ИГРЫ
+            </p>
+            <p class="intro__subtitle">{{ page.intro_subtitle }}</p>
+            <h2 class="intro__about-us">{{ page.intro_about_us }}</h2>
+            <div class="intro__zorg-games">
+                <div>
+                    <div class="intro__zorg-games-title">
+                        <span class="accent-text">ZORG</span>
+                        <br />
+                        GAMES
+                    </div>
+                    <div class="intro__zorg-games-subtitle">{{ page.intro_about_us_subtitle }}</div>
+                </div>
+                <div>
+                    <div class="team-img">{% image page.image_about_us max-768x609 loading="lazy" %}</div>
+                </div>
+            </div>
+            <div class="arrow">
+                <div class="arrow-info">Узнать больше</div>
+                <a href="./pages/studia.html" class="arrow-btn block btn">студия</a>
+            </div>
+        </div>
+    </section>
+    <section class="projects">
+        <div class="container">
+            <h2 class="projects__title">{{ page.our_projects_title }}</h2>
+            <div class="projects__wrapper">
+                <div class="projects__browl">
+                    <img class="projects__browl-image block"
+                            src="{% static 'assets/browl-royale.png' %}"
+                            alt="Browl Royale Logo"
+                            loading="lazy" />
+                    <p class="projects__browl-title">
+                        {{ page.browl_royale_text1 }}
+                        <br />
+                        {{ page.browl_royale_text2 }}
+                        <br />
+                        {{ page.browl_royale_text3 }}
+                    </p>
+                    <div class="projects__stores">
+                        <a href="#" target="_blank">
+                            <img height="58"
+                                    width="197"
+                                    class="block projects__stores-image"
+                                    loading="lazy"
+                                    srcset="{% static 'assets/app-store.png 1x, static/assets/app-store2x.png 2x' %}"
+                                    alt="App Store Logo"
+                                    loading="lazy" />
+                        </a>
+                        <a href="#" target="_blank">
+                            <img height="58"
+                                    width="197"
+                                    class="block projects__stores-image"
+                                    loading="lazy"
+                                    srcset="{% static 'assets/google-play.png 1x, static/assets/google-play2x.png 2x' %}"
+                                    alt="Google Play Logo"
+                                    loading="lazy" />
+                        </a>
+                    </div>
+                </div>
+                <div class="projects__list">
+                    {% for card in portfoliocards %}
+                    <div class="projects__item">
+                        <a href="portfolio?title={{card.title}}" target="_blank">
+                            <img src="{{card.image_logo.url}}"
+                                    alt="{{card.title}}"
+                                    loading="lazy"
+                                    width="97"
+                                    height="97"
+                                    loading="lazy" />
+                        </a>
+                    </div>
+                    {% endfor %}
+                    <div class="projects__item--more">
+                        <a href="portfolio">
+                            <img src="{% static 'assets/plus.svg' %}" alt="+" loading="lazy" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <div class="container">
+            {% include_block page.body_service %}
+        </div>
+    </section>
+    <section class="carrier">
+        <div class="container">
+            <h2 class="carrier__title">{{ page.work_title }}</h2>
+            <p class="carrier__subtitle">{{ page.work_message }}</p>
+            <div class="carrier__vacancy carrier__vacancy--mb174">
+                {% for block in page.body_work %}
+                    {% include_block block %}
+                {% endfor %}
+                <a href="/pages/advance.html">
+                    <div class="carrier__vacancy-card carrier__vacancy-card--more"
+                            data-js="vacancy-item">
+                        <div class="carrier__vacancy-card--more-title">Полный список вакансий</div>
+                        <div class="carrier__vacancy--more-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="66"
+                                    height="66"
+                                    viewBox="0 0 66 66"
+                                    fill="#99CC00">
+                                <circle cx="33" cy="33" r="33" fill="#99CC00" />
+                                <path d="M14.4878 32.9996H47.8795M38.2705 44.6316L49.1872 33.7149C49.5822 33.3199 49.5822 32.6794 49.1872 32.2844L38.2705 21.3677" stroke="currentColor" stroke-width="6.6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="carrier__application">
+                <form action="#" class="carrier__application-form">
+                    <input type="text"
+                            class="carrier__application-input block"
+                            placeholder="Имя"
+                            name="name"
+                            required />
+                    <input type="email"
+                            class="carrier__application-input block"
+                            placeholder="Почта"
+                            name="email"
+                            required />
+                    <input type="text"
+                            class="carrier__application-input block"
+                            placeholder="Тема"
+                            name="theme"
+                            required />
+                    <textarea class="carrier__application-input carrier__application-text-area block"
+                                name="message"
+                                id="message-carrier"
+                                placeholder="Ваше сообщение"
+                                required></textarea>
+                    <input type="checkbox"
+                            class="custom-checkbox__field"
+                            id="personal-data-checkbox"
+                            name="personal-data"
+                            required />
+                    <label for="personal-data-checkbox"
+                            class="custom-checkbox__label carrier__application-checkbox">
+                        Даю согласие на&nbsp;
+                        <a href="#" target="_blank" class="carrier__application-personal">обработку личных данных</a>
+                    </label>
+                    <input type="submit" class="carrier__application-submit block" />
+                </form>
+                <div class="card--right card--w405 card--mh552">
+                    {% image page.image_carrier max-405x552 alt="carrier-image" loading="lazy"  %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
 {% endblock content %}

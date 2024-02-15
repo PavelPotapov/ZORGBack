@@ -47,13 +47,13 @@ class a {
 		)
 	}
 	getStartConfiguration() {
-		;;(this.htmlDetail = c(
-			document.querySelector(".flowContainer"),
+		;;;(this.htmlDetail = c(
+			document.querySelector(".main"),
 			this.selectors.htmlDetail
 		)),
 			this.htmlDetail &&
 				this.togglePopup(
-					document.querySelector(".flowContainer"),
+					document.querySelector(".main"),
 					this.selectors.htmlDetail
 				)
 	}
