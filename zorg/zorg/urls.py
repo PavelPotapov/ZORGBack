@@ -17,8 +17,6 @@ from work import views as work_views
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
-    path("documents/", include(wagtaildocs_urls)),
-    path("search/", search_views.search, name="search"),
     path("work/", work_views.hello_work),
     path("studia/", studia_views.hello_studia),
     path("portfolio/", portfolio_views.hello_portfolio),

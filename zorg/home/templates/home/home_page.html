@@ -52,7 +52,7 @@
             </div>
             <div class="arrow">
                 <div class="arrow-info">Узнать больше</div>
-                <a href="./pages/studia.html" class="arrow-btn block btn">студия</a>
+                <a href="studia" class="arrow-btn block btn">студия</a>
             </div>
         </div>
     </section>
@@ -73,7 +73,7 @@
                         {{ page.browl_royale_text3 }}
                     </p>
                     <div class="projects__stores">
-                        <a href="#" target="_blank">
+                        <a href="{{page.link_to_appstore}}" target="_blank">
                             <img height="58"
                                     width="197"
                                     class="block projects__stores-image"
@@ -82,7 +82,7 @@
                                     alt="App Store Logo"
                                     loading="lazy" />
                         </a>
-                        <a href="#" target="_blank">
+                        <a href="{{page.link_to_googleplay}}" target="_blank">
                             <img height="58"
                                     width="197"
                                     class="block projects__stores-image"
@@ -128,7 +128,7 @@
                 {% for block in page.body_work %}
                     {% include_block block %}
                 {% endfor %}
-                <a href="/pages/advance.html">
+                <a href="/work">
                     <div class="carrier__vacancy-card carrier__vacancy-card--more"
                             data-js="vacancy-item">
                         <div class="carrier__vacancy-card--more-title">Полный список вакансий</div>

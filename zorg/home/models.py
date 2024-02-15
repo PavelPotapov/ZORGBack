@@ -71,6 +71,22 @@ class HomePage(Page):
         verbose_name="Заголовок. Наши проекты"
     )
 
+    link_to_appstore = models.CharField(
+        max_length=1000,
+        blank=True,  # можно ничего не вводить в это поле
+        null=True,  # в бд может быть null
+        # поле будет называть на русском в интерфейсе админа
+        verbose_name="Ссылка на appstore"
+    )
+
+    link_to_googleplay = models.CharField(
+        max_length=1000,
+        blank=True,  # можно ничего не вводить в это поле
+        null=True,  # в бд может быть null
+        # поле будет называть на русском в интерфейсе админа
+        verbose_name="Ссылка на google play"
+    )
+
     browl_royale_text1 = models.CharField(
         max_length=1000,
         blank=True,  # можно ничего не вводить в это поле
@@ -158,7 +174,7 @@ class HomePage(Page):
     # поля в интерфейсе администратора
     content_panels = Page.content_panels + \
         [FieldPanel("body_gallery"), FieldPanel('subtitle'), FieldPanel('intro_title'), FieldPanel('intro_subtitle'), FieldPanel('intro_about_us'), FieldPanel('intro_about_us_subtitle'), FieldPanel(
-            'image_about_us'), FieldPanel("our_projects_title"), FieldPanel("browl_royale_text1"), FieldPanel("browl_royale_text2"), FieldPanel("browl_royale_text3"), FieldPanel("service_title"), FieldPanel("body_service"), FieldPanel('work_title'), FieldPanel("work_message"), FieldPanel("body_work"), FieldPanel("image_carrier")]
+            'image_about_us'), FieldPanel("our_projects_title"), FieldPanel("link_to_appstore"), FieldPanel("link_to_googleplay"), FieldPanel("browl_royale_text1"), FieldPanel("browl_royale_text2"), FieldPanel("browl_royale_text3"), FieldPanel("service_title"), FieldPanel("body_service"), FieldPanel('work_title'), FieldPanel("work_message"), FieldPanel("body_work"), FieldPanel("image_carrier")]
 
     # настройка полей в других вкладках
     # promote_panels
