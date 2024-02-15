@@ -57,9 +57,57 @@ class WorkPage(Page):
         ], blank=True, use_json_field=True, verbose_name="Блок услуг на главной"
     )
 
+    vacancy_title = models.CharField(
+        max_length=1000,
+        blank=True,  # можно ничего не вводить в это поле
+        null=True,  # в бд может быть null
+        # поле будет называть на русском в интерфейсе админа
+        verbose_name="Длинный текст перед кнопкой"
+    )
+
+    get_contact_title = models.CharField(
+        max_length=1000,
+        blank=True,  # можно ничего не вводить в это поле
+        null=True,  # в бд может быть null
+        # поле будет называть на русском в интерфейсе админа
+        verbose_name="Короткий текст перед кнопкой зеленый"
+    )
+
+    text = models.CharField(
+        max_length=1000,
+        blank=True,  # можно ничего не вводить в это поле
+        null=True,  # в бд может быть null
+        # поле будет называть на русском в интерфейсе админа
+        verbose_name="текст"
+    )
+
+    text2 = models.CharField(
+        max_length=1000,
+        blank=True,  # можно ничего не вводить в это поле
+        null=True,  # в бд может быть null
+        # поле будет называть на русском в интерфейсе админа
+        verbose_name="текст 2"
+    )
+
+    text_btn = models.CharField(
+        max_length=1000,
+        blank=True,  # можно ничего не вводить в это поле
+        null=True,  # в бд может быть null
+        # поле будет называть на русском в интерфейсе админа
+        verbose_name="текст кнопки"
+    )
+
+    image_contact = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True, null=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name="Картинка для блока контактов"
+    )
+
     content_panels = Page.content_panels + \
         [FieldPanel("title1"), FieldPanel("title2"),
-         FieldPanel("subtitle"),  FieldPanel("image_work"),  FieldPanel("body_advantage"),  FieldPanel("body_work")]
+         FieldPanel("subtitle"),  FieldPanel("image_work"),  FieldPanel("body_advantage"),  FieldPanel("body_work"), FieldPanel("vacancy_title"), FieldPanel("get_contact_title"), FieldPanel("text"), FieldPanel("text2"), FieldPanel("text_btn"), FieldPanel("image_contact")]
 
     # настройка полей в других вкладках
     # promote_panels

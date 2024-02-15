@@ -35,11 +35,10 @@
     <section class="vacancy">
 					<div class="container">
 						<p class="vacancy__title">
-							В ZORG GAMES созданы все условия для раскрытия творческого
-							потенциала и реализации самых смелых профессиональных амбиций.
+							{{page.vacancy_title}}
 						</p>
 						<p class="vacancy__title vacancy__subtitle">
-							<span class="accent-text"> Присоединяйтесь!</span>
+							<span class="accent-text">{{page.get_contact_title}}</span>
 						</p>
 						<div class="carrier__vacancy">
 							{% for block in page.body_work %}
@@ -48,17 +47,16 @@
 						</div>
 						<div class="vacancy__get-contact">
 							<div class="vacancy__get-contact--title">
-								Не нашли подходящую вакансию?
+								{{page.text}}
 							</div>
 							<div class="vacancy__get-contact--subtitle">
-								Оставьте свои контакты и при появлении нужной вакансии мы с вами
-								свяжемся!
+								{{page.text2}}
 							</div>
 							<button class="vacancy__get-contact--btn" data-js="vacancy-item">
-								Оставить контакт
+								{{page.text_btn}}
 							</button>
 							<div class="vacancy__img card--right card--w326 card--rot15">
-								<img src="../img/team.png" alt="carrier-image" />
+                                {% image page.image_contact max-401x440 alt="carrier-image" loading="lazy"  %}
 							</div>
 						</div>
 					</div>
