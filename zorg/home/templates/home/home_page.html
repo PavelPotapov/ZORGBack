@@ -146,7 +146,8 @@
                 </a>
             </div>
             <div class="carrier__application">
-                <form action="#" class="carrier__application-form">
+                <form action="contact" class="carrier__application-form" method='POST'>
+                    {% csrf_token %}
                     <input type="text"
                             class="carrier__application-input block"
                             placeholder="Имя"

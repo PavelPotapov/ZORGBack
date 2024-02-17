@@ -12,6 +12,7 @@ from search import views as search_views
 from ourstudia import views as studia_views
 from portfolio import views as portfolio_views
 from work import views as work_views
+from contacts import views as contact_views
 
 
 urlpatterns = [
@@ -20,6 +21,9 @@ urlpatterns = [
     path("work/", work_views.hello_work),
     path("studia/", studia_views.hello_studia),
     path("portfolio/", portfolio_views.hello_portfolio),
+    path("portfolio/", portfolio_views.hello_portfolio),
+    path("contact", contact_views.form_submission),
+    path("vacancy", contact_views.vacancy_submission),
     path("filter", portfolio_views.filter_portfolio),
     path("", home_views.hello_world, name="test")
 ]

@@ -114,23 +114,32 @@
                     data-js="contact-form"
                     id="contact-form"
                     enctype="multipart/form-data"
-                    data-js-details='{"url": "http://192.168.0.5:5000/form1"}'>
+                    data-js-details='{"url": "vacancy"}'>
+                {% csrf_token %}
                 <div class="contact-modal__input-container">
                     <input type="text"
+                            id="name"
+                            name="name"
                             class="input-text contact-modal__input"
                             placeholder="*Name"
                             required />
                     <input type="email"
+                            id="email"
+                            name="email"
                             class="input-text contact-modal__input"
                             placeholder="*Email"
                             required />
                     <div class="contact-modal__input input-icon-container input-icon-container--telegram">
                         <input type="text"
+                                id="telegram-contact"
+                                name="telegram-contact"
                                 class="input-text input-text--telegram"
                                 placeholder="@example" />
                     </div>
                     <div class="contact-modal__input input-icon-container input-icon-container--linkedin">
                         <input type="text"
+                                id="linkedin-contact"
+                                name="linkedin-contact"
                                 class="input-text input-text--linkedin contact-modal__input"
                                 placeholder="linkedin" />
                     </div>
@@ -146,6 +155,7 @@
                         <input type="file"
                                 class="input-file"
                                 id="input-file"
+                                name="input-file"
                                 title="Прикрепить резюме" />
                         <button class="contact-modal__resume" id="fileButton" data-js="get-file-btn">Прикрепить резюме</button>
                         <div class="contact-modal__delete-file" data-js="delete-file"></div>
