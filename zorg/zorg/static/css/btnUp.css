@@ -1,0 +1,43 @@
+.btn-up {
+    position: sticky;
+    bottom: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 75px;
+    aspect-ratio: 1 / 1;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color: var(--color-white);
+    
+    transition: opacity 0.3s ease-in-out;
+    z-index: 5;
+}
+
+.btn-up::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: transparent no-repeat center center;
+    background-size: contain;
+    background-image: url("../assets/up-arrow.svg");
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-up--hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-up:hover.btn-up::after{
+    transform: scale(1.2);
+  }
+}

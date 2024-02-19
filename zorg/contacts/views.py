@@ -7,8 +7,9 @@ from .models import FormSubmission
 
 
 def form_submission(request):
-    print('работает!!')
+    print('работает!!', request)
     if request.method == 'POST':
+        print('Зашли')
         email = request.POST.get('email')
         name = request.POST.get('name')
         theme = request.POST.get('theme')
@@ -17,7 +18,7 @@ def form_submission(request):
         FormSubmission.objects.create(
             email=email, name=name, theme=theme, message=message)
         # return HttpResponseRedirect('/thank-you/')
-        return HttpResponse("", status=200)
+        return HttpResponse("Все работает", status=200)
     return HttpResponse("", status=500)
 
 

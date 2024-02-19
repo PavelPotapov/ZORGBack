@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block content %}
+
+
+<main>
+    <section class="profile">
+        <div class="container">
+            <div class="profile__wrapper">
+                <div class="profile__img card--right card--w405">
+                    {% image page.image_facility max-473x571 alt="team" loading="lazy"  %}
+                </div>
+                <div class="profile__info">
+                    <div class="profile__zorg-games-title">
+                        {{page.subtitle2}} <br />
+                        <span class="accent-text">{{page.subtitle}}</span>
+                    </div>
+                    <p class="profile__zorg-games-subtitle">
+                        {{page.text}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="work-condition">
+        <div class="container">
+            <div class="work-condition__wrapper">
+                <div class="infoblock-container">
+                    {% for block in page.body_advantage %}
+						{% include_block block %}
+					{% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="process">
+        <div class="container">
+            <h3 class="process__title">
+                {{page.process_text}}
+                <span class="accent-text">{{page.process_text2}}</span>
+            </h3>
+            <div class="process__wrapper">
+                <img
+                    src="{% static 'assets/facility/Map.png' %}"
+                    alt="map"
+                    class="process__img"
+                />
+                <div class="process__step-wrapper">
+                    <div class="process__step process--text1">
+                        {{page.step1}}
+                    </div>
+                    <div class="process__step process--text2">
+                        {{page.step2}}
+                    </div>
+                    <div class="process__step process--text3">
+                        {{page.step3}}
+                    </div>
+                    <div class="process__step process--text4">
+                        {{page.step4}}
+                    </div>
+                    <div class="process__step process--text5">
+                        {{page.step5}}
+                    </div>
+                    <div class="process__step process--text6">
+                        {{page.step6}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="carrier">
+        <div class="container">
+            <p class="carrier__subtitle">
+                {{page.text2}}
+            </p>
+            <div class="carrier__application">
+                <form action="/contact" class="carrier__application-form" method='POST'>
+                    {% csrf_token %}
+                    <input
+                        type="text"
+                        class="carrier__application-input block"
+                        placeholder="Имя"
+                        name="name"
+                        required
+                    />
+                    <input
+                        type="email"
+                        class="carrier__application-input block"
+                        placeholder="Почта"
+                        name="email"
+                        required
+                    />
+                    <input
+                        type="text"
+                        class="carrier__application-input block"
+                        placeholder="Тема"
+                        name="theme"
+                        required
+                    />
+                    <textarea
+                        class="carrier__application-input carrier__application-text-area block"
+                        name="message"
+                        id="message-carrier"
+                        placeholder="Ваше сообщение"
+                        required
+                    ></textarea>
+                    <input
+                        type="checkbox"
+                        class="custom-checkbox__field"
+                        id="personal-data-checkbox"
+                        name="personal-data"
+                        required
+                    />
+                    <label
+                        for="personal-data-checkbox"
+                        class="custom-checkbox__label carrier__application-checkbox"
+                    >
+                        Даю согласие на&nbsp;
+                        <a
+                            href="#"
+                            target="_blank"
+                            class="carrier__application-personal"
+                            >обработку личных данных</a
+                        >
+                    </label>
+                    <input
+                        type="submit"
+                        class="carrier__application-submit block"
+                    />
+                </form>
+                <div class="seo-company">
+                    <h4 class="seo-company-title">{{page.name_owner}}</h4>
+                    <span class="block seo-company-subtitle mb23 accent-text"
+                        >{{page.subtitle_name_owner}}</span
+                    >
+                    <div class="card--ceo-company">
+                        {% image page.image_owner max-537x537 alt="owner" loading="lazy" class="card--ceo-img"  %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<div class="btn-up btn-up--hide" data-js-btn-up data-js-btn-up-hide></div>
+</main>
+
+{% endblock content %}

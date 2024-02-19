@@ -7345,10 +7345,10 @@ const js = new U.Controller(),
 	}),
 	si = new U.Scene({
 		triggerElement: ".carrier__vacancy",
-		triggerHook: 0.5,
+		triggerHook: 0.7,
 		reverse: !1,
 	}),
-	ii = new U.Scene({ triggerElement: ".intro", triggerHook: 0.5, reverse: !1 }),
+	ii = new U.Scene({ triggerElement: ".intro", triggerHook: 0.9, reverse: !1 }),
 	ri = new ne().to(".gallery", 0.5, {
 		opacity: 1,
 		ease: te.easeInOut,

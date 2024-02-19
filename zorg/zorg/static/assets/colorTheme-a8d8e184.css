@@ -3707,6 +3707,7 @@ body {
 	width: max-content;
 	text-align: center;
 	padding-top: 48px;
+	text-transform: uppercase;
 }
 .profile__zorg-games-subtitle {
 	color: var(--color-white);

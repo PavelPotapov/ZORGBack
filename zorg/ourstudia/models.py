@@ -63,9 +63,9 @@ class StudiaPage(Page):
         [
             ('advantage_section', AdvantageBlock(
                 blank=True,
-                verbose_name="Блоки c преимуществами  работы")),
+                verbose_name="Блоки c преимуществами работы")),
 
-        ], blank=True, use_json_field=True, verbose_name="Блок услуг на главной"
+        ], blank=True, use_json_field=True, verbose_name="Блоки c преимуществами работы"
     )
 
     text3 = models.CharField(

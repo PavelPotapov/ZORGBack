@@ -13,12 +13,14 @@ from ourstudia import views as studia_views
 from portfolio import views as portfolio_views
 from work import views as work_views
 from contacts import views as contact_views
+from facility import views as facility_views
 
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("work/", work_views.hello_work),
+    path("facility/", facility_views.hello_facility),
     path("studia/", studia_views.hello_studia),
     path("portfolio/", portfolio_views.hello_portfolio),
     path("portfolio/", portfolio_views.hello_portfolio),
