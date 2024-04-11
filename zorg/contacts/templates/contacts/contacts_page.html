@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block content %}
+
+<main>
+    <section class="about">
+		<div class="container">
+			<p class='intro__title' style='color: var(--color-white); text-align: center; font-family: "Montserrat", sans-serif;'>{{content}}</p>
+            <p class='intro__title' style='color: var(--color-white); text-align: center; font-family: "Montserrat", sans-serif;'><a href="/" class='accent-text' style='text-decoration: none; text-align: center;'>Вернуться на главную</a></p>
+            
+		</div>
+	</section>
+   
+	<div class="btn-up btn-up--hide" data-js-btn-up data-js-btn-up-hide></div>
+</main>
+
+{% endblock content %}

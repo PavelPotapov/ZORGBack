@@ -7,18 +7,16 @@ from .models import FormSubmission
 
 
 def form_submission(request):
-    print('работает!!', request)
     if request.method == 'POST':
-        print('Зашли')
         email = request.POST.get('email')
         name = request.POST.get('name')
         theme = request.POST.get('theme')
         message = request.POST.get('message')
-        print(request.FILES.get("input-file"))
         FormSubmission.objects.create(
             email=email, name=name, theme=theme, message=message)
         # return HttpResponseRedirect('/thank-you/')
-        return HttpResponse("Все работает", status=200)
+        return render(request, 'contacts/contacts_page.html', {"content": "Мы свяжемся с вами в ближайшее время 🚀"})
+        #return HttpResponse("Все работает", status=200)
     return HttpResponse("", status=500)
 
 
@@ -41,3 +39,7 @@ def vacancy_submission(request):
             email=email, name=name, theme=theme, message=about_me, telegram_contact=telegram_contact, linked_in_contact=linkedin_contact, resume=input_file)
         return HttpResponse("", status=200)
     return HttpResponse("", status=500)
+
+
+def custom_handler404(request, exception):
+    return render(request, '404.html', status=404)

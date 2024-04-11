@@ -197,9 +197,11 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-.accent-text {
+.accent-text.accent-text {
 	color: var(--color-accent);
 }
+
+
 @media (max-width: 1330px) {
 	.container {
 		padding: 0 30px;

@@ -4,11 +4,7 @@ from django.shortcuts import render
 
 
 def hello_work(request):
-    print("DAAAAAAAAAAAA !!!!", request)
-    field_name = 'body'
     obj = WorkPage.objects.first()
-    # objects = obj.body
-    # field_value = getattr(obj, field_name)
     my_context = {
         "page": obj,
     }

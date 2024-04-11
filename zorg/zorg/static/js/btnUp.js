@@ -61,6 +61,8 @@ class ButtonUP {
 	}
 }
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(`[data-js-btn-up]`).forEach((el) => {
 			new ButtonUP(el)

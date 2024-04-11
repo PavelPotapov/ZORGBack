@@ -2,6 +2,7 @@ from django.conf import settings
 from django.urls import include, path
 from django.contrib import admin
 from django.http import Http404
+from django.conf.urls import handler404
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
@@ -14,6 +15,8 @@ from portfolio import views as portfolio_views
 from work import views as work_views
 from contacts import views as contact_views
 from facility import views as facility_views
+
+
 
 
 urlpatterns = [
@@ -49,3 +52,5 @@ urlpatterns = urlpatterns + [
     # of your site, rather than the site root:
     #    path("pages/", include(wagtail_urls)),
 ]
+
+handler404 = contact_views.custom_handler404
