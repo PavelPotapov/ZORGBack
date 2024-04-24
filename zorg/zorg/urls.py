@@ -12,12 +12,15 @@ from home import views as home_views
 from search import views as search_views
 from ourstudia import views as studia_views
 from portfolio import views as portfolio_views
+from policy import views as policy_views
 from work import views as work_views
 from contacts import views as contact_views
 from facility import views as facility_views
+from ourcontacts import views as ourcontact_views
 
 
 
+handler404 = contact_views.handler404
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -25,11 +28,12 @@ urlpatterns = [
     path("work/", work_views.hello_work),
     path("facility/", facility_views.hello_facility),
     path("studia/", studia_views.hello_studia),
-    path("portfolio/", portfolio_views.hello_portfolio),
+    path("ourcontact/", ourcontact_views.contacts_view),
     path("portfolio/", portfolio_views.hello_portfolio),
     path("contact", contact_views.form_submission),
     path("vacancy", contact_views.vacancy_submission),
     path("filter", portfolio_views.filter_portfolio),
+    path("policy/", policy_views.policy_view),
     path("", home_views.hello_world, name="test")
 ]
 
@@ -42,7 +46,7 @@ if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
-
+    
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in
@@ -51,6 +55,7 @@ urlpatterns = urlpatterns + [
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
     #    path("pages/", include(wagtail_urls)),
+    
 ]
 
-handler404 = contact_views.custom_handler404
+

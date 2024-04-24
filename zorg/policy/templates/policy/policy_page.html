@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% load static wagtailimages_tags wagtailcore_tags %}
+{% block body_class %}template-homepage{% endblock %} {% block content %}
+<main>
+	<div style="margin-bottom: 150px"></div>
+	<section class="carrier">
+		<div class="container">
+			<h2 class="carrier__title">{{ page.title1}}</h2>
+			<p class="carrier__subtitle">{{ page.title2|richtext }}</p>
+		</div>
+	</section>
+	<div class="btn-up btn-up--hide" data-js-btn-up data-js-btn-up-hide></div>
+</main>
+{% endblock %}

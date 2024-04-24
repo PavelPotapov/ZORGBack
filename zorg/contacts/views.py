@@ -41,5 +41,5 @@ def vacancy_submission(request):
     return HttpResponse("", status=500)
 
 
-def custom_handler404(request, exception):
+def handler404(request, exception):
     return render(request, '404.html', status=404)

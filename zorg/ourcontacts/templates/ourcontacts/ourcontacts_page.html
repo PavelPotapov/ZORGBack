@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block content %}
+
+<main>
+    <div style="margin-bottom: 150px;"></div>
+    <section class="carrier">
+        <div class="container">
+            <p class="carrier__subtitle">{{ page.subtitle }}</p>
+            <div class="carrier__application" style="justify-content: center; gap: 50px"> 
+                <form action="/contact" class="carrier__application-form" method='POST'>
+                    {% csrf_token %}
+                    <input type="text"
+                            class="carrier__application-input block"
+                            placeholder="Имя"
+                            name="name"
+                            required />
+                    <input type="email"
+                            class="carrier__application-input block"
+                            placeholder="Почта"
+                            name="email"
+                            required />
+                    <input type="text"
+                            class="carrier__application-input block"
+                            placeholder="Тема"
+                            name="theme"
+                            required />
+                    <textarea class="carrier__application-input carrier__application-text-area block"
+                                name="message"
+                                id="message-carrier"
+                                placeholder="Ваше сообщение"
+                                required></textarea>
+                    <input type="checkbox"
+                            class="custom-checkbox__field"
+                            id="personal-data-checkbox"
+                            name="personal-data"
+                            required />
+                    <label for="personal-data-checkbox"
+                            class="custom-checkbox__label carrier__application-checkbox">
+                        Даю согласие на&nbsp;
+                        <a href="/policy" target="_blank" class="carrier__application-personal">обработку личных данных</a>
+                    </label>
+                    <input type="submit" class="carrier__application-submit block" />
+                </form>
+                <div>
+                    <div style="font-size: 25px;"><a href="{{ page.link_phone }}">{{ page.phone }}</a></div>
+                    <div style="font-size: 25px"><a href="{{ page.email_phone }}">{{ page.email }}</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="btn-up btn-up--hide" data-js-btn-up data-js-btn-up-hide></div>
+</main>
+
+{% endblock content %}
