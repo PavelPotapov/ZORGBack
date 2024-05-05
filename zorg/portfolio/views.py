@@ -98,8 +98,8 @@ def filter(filters:list=None):
 def hello_portfolio(request):
     field_name = 'body'
     obj = PortfolioPage.objects.first()
-    cards = PortfolioCard.objects.all()
-
+    cards = PortfolioCard.objects.all().order_by('order_for_main')
+    
     result_dict = create_datajs_detail()
     categories = create_categories()
     styles = create_styles()
