@@ -18,6 +18,7 @@ class PortfolioCard(models.Model):
     title = models.CharField(blank=True, null=True, max_length=150)
     date =  models.CharField(blank=True, null=True, max_length=150)
     text = models.CharField(blank=True, null=True, max_length=150)
+    link = models.CharField(blank=True, null=True, max_length=350)
     
     style = models.CharField(blank=True, null=True, max_length=150)
     categories = models.CharField(blank=True, null=True, max_length=150)
