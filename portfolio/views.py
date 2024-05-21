@@ -24,7 +24,7 @@ def create_styles():
 def create_datajs_detail(filter=None):
     '''{"images":["../img/team.png","../img/team.png","../img/team.png","../img/team.png","../img/team.png"],"logo":"../img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'''
     '''
-        {'images': ['/media/images/FX62mYgFQZI.jpg', '/media/images/Screenshot_3.png', '/media/images/vaveda_qpwMDDJ.png'], 'logo': '/media/images/team_tBbnQxZ.png', 'date': '25.06.2023', 'text': 'Это новая игра123', 'title': 'Brawl Stars'}
+        {'images': ['/media/images/FX62mYgFQZI.jpg', '/media/images/Screenshot_3.png', '/media/images/vaveda_qpwMDDJ.png'], 'logo': '/media/images/team_tBbnQxZ.png', 'date': '25.06.2023', 'text': 'Это новая игра123', 'title': 'Brawl Stars', link: "example.com"}
     '''
 
     if filter is None:
@@ -52,6 +52,7 @@ def create_datajs_detail(filter=None):
             "date": card.date,
             "text": card.text,
             "title": card.title,
+            "link": card.link,
         }
         
         result_dict[card.title] = json.dumps(res)

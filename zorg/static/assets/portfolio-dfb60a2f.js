@@ -26,6 +26,7 @@ class a {
 				detail: "data-js-portfolio-detail",
 				htmlDetail: "data-js-portfolio-detail-start",
 				overlay: '[data-js="popup-overlay"]',
+				link: '[data-js-link-to-game]',
 				item: '[data-js="game-item"]',
 				itemsContainer: '[data-js="portfolio-content"]',
 			}),
@@ -65,6 +66,7 @@ class a {
 			(this.container = this.popup.querySelector(this.selectors.container)),
 			(this.images = this.popup.querySelectorAll(this.selectors.images)),
 			(this.text = this.popup.querySelector(this.selectors.text)),
+			(this.link = this.popup.querySelector(this.selectors.link)),
 			(this.date = this.popup.querySelector(this.selectors.date)),
 			(this.title = this.popup.querySelector(this.selectors.title)),
 			(this.items = document.querySelectorAll(this.selectors.item)),
@@ -84,6 +86,7 @@ class a {
 					(this.logo.src = ""),
 					(this.title.innerText = ""),
 					(this.text.innerText = ""),
+					(this.link.href = ""),
 					(this.date.innerText = ""),
 					t()
 			} catch {
@@ -98,6 +101,7 @@ class a {
 			;(this.logo.src = s.logo),
 				(this.title.innerText = s.title),
 				(this.text.innerText = s.text),
+				(this.link.href = s.link ? s.link : ""),
 				(this.date.innerText = s.date),
 				s.images.forEach((i) => {
 					const m = r(
