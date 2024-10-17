@@ -80,13 +80,7 @@ label {
 legend {
 	display: block;
 }
-@font-face {
-	font-family: Luckiest Guy RUS-BEL-UKR;
-	font-weight: 400;
-	font-style: normal;
-	src: local("Luckiest Guy RUS-BEL-UKR"),
-		url(../../../../src/fonts/luckiest-guy-rus-bel-ukr.otf) format("otf");
-}
+
 :root {
 	--color-darkblue: #342405;
 	--color-white: #000;
@@ -259,7 +253,6 @@ body {
 	color: #3c6100;
 	text-align: center;
 	text-shadow: 0px 3px 0px #d7f701;
-	font-family: Luckiest Guy RUS-BEL-UKR;
 	font-size: 42.574px;
 	font-style: normal;
 	font-weight: 400;
