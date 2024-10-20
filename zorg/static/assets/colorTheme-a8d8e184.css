@@ -3501,7 +3501,7 @@ body {
 	position: absolute;
 	right: 0;
 	top: -40vw;
-	background-image: url(../../../publiccircle-tight-small.svg);
+	background-image: url(./publiccircle-tight-small.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	z-index: -1;
