@@ -2,7 +2,6 @@
     width: 215px;
     height: 44px;
     position: absolute;
-    background-image: url("sprites/костюм 1.svg");
     background-size: contain;
     background-position: center center;
     z-index: 450;
